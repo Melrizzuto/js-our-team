@@ -7,13 +7,21 @@ h1 {
     background-color: #E53270;
     color: white;
     border-color: #E53270;
-    transition: transform 0.3s, box-shadow 0.3s;
+    
   }
   
   .custom-btn:hover {
     background-color: #D02963;
-    transform: scale(1.05);
+    
   }
+.btn{
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.btn:hover{
+    transform: scale(1.05);
+}
+
 
 header p {
     margin-bottom: 60px;

@@ -77,9 +77,9 @@ document.getElementById('toggle-form-btn').addEventListener('click', function() 
   formContainer.classList.toggle('d-none');
 
   if (formContainer.classList.contains('d-none')) {
-    this.innerHTML = 'Aggiungi Membro';
+    this.innerHTML = 'Entra a far parte del team';
   } else {
-    this.innerHTML = 'Nascondi Form';
+    this.innerHTML = 'Nascondi';
   }
 });
 
