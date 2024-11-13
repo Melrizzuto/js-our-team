@@ -65,3 +65,19 @@ for (const member of teamMembers) {
 
 // Impostiamo tutto il contenuto HTML accumulato nel container
 teamContainer.innerHTML = teamHTML;
+
+
+
+// Mostra/Nascondi il form
+document.getElementById('toggle-form-btn').addEventListener('click', function() {
+  const formContainer = document.getElementById('add-member-container');
+  formContainer.classList.toggle('d-none');
+
+  if (formContainer.classList.contains('d-none')) {
+    this.innerHTML = 'Aggiungi Membro';
+  } else {
+    this.innerHTML = 'Nascondi Form';
+  }
+});
+
+// pushare il  nuovo membro nell'array
