@@ -39,34 +39,37 @@ const teamMembers = [
 
 const teamContainer = document.getElementById("team-cards");
 
-// Creo le cards
-let teamHTML = ''; // Variabile per accumulare il contenuto HTML
+// Funzione per creare le card
+function renderTeam() {
+  let teamHTML = ''; // Variabile per accumulare il contenuto HTML
 
-for (const member of teamMembers) {
-  teamHTML += `
-    <div class="col-12 col-sm-12 col-md-6 col-lg-4 mb-4">
-      <div class="card text-bg-dark mb-3">
-        <div class="row g-0">
-          <div class="col-4">
-            <img src="${member.img}" class="img-fluid rounded-start" alt="${member.name}">
-          </div>
-          <div class="col-8">
-            <div class="card-body">
-              <h5 class="card-title text-uppercase">${member.name}</h5>
-              <p class="card-text">${member.role}</p>
-              <a href="mailto:${member.email}" class="card-text">${member.email}</a>
+  for (const member of teamMembers) {
+    teamHTML += `
+      <div class="col-12 col-sm-12 col-md-6 col-lg-4 mb-4">
+        <div class="card text-bg-dark mb-3">
+          <div class="row g-0">
+            <div class="col-4">
+              <img src="${member.img}" class="img-fluid rounded-start" alt="${member.name}">
+            </div>
+            <div class="col-8">
+              <div class="card-body">
+                <h5 class="card-title text-uppercase">${member.name}</h5>
+                <p class="card-text">${member.role}</p>
+                <a href="mailto:${member.email}" class="card-text">${member.email}</a>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  `;
+    `;
+  }
+
+  // Impostiamo tutto il contenuto HTML accumulato nel container
+  teamContainer.innerHTML = teamHTML;
 }
 
-// Impostiamo tutto il contenuto HTML accumulato nel container
-teamContainer.innerHTML = teamHTML;
-
-
+// Carica inizialmente le card
+renderTeam();
 
 // Mostra/Nascondi il form
 document.getElementById('toggle-form-btn').addEventListener('click', function() {
@@ -80,4 +83,24 @@ document.getElementById('toggle-form-btn').addEventListener('click', function() 
   }
 });
 
-// pushare il  nuovo membro nell'array
+// Aggiungi membro al team
+const myform = document.getElementById("add-member-form");
+myform.addEventListener("submit", addMember);
+
+function addMember(event) {
+  event.preventDefault();
+  event.stopPropagation();
+  
+  const name = document.getElementById("name").value;
+  const role = document.getElementById("role").value;
+  const image = document.getElementById("image-url").value; 
+
+  const newMember = {
+    name,
+    role,
+    img: image,
+  };
+
+  teamMembers.push(newMember);
+  renderTeam();
+}
