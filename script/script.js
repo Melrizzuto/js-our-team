@@ -39,17 +39,23 @@ const teamMembers = [
 
 const teamContainer = document.getElementById("team-cards");
 
-// creo le cards
+// Creo le cards
 teamMembers.forEach(member => {
   const memberCard = document.createElement("div");
-  memberCard.className = "col-md-4 mb-4";
+  memberCard.className = "col-12 col-sm-6 col-md-4 col-lg-4 mb-4"; // Responsività
   memberCard.innerHTML = `
-    <div class="card">
-      <img src="${member.img}" class="card-img-top" alt="${member.name}">
-      <div class="card-body text-center">
-        <h5 class="card-title">${member.name}</h5>
-        <p class="card-text">${member.role}</p>
-        <a href="mailto:${member.email}" class="card-text">${member.email}</a>
+    <div class="card text-bg-dark mb-3">
+      <div class="row g-0">
+        <div class="col-4">
+          <img src="${member.img}" class="img-fluid rounded-start" alt="${member.name}">
+        </div>
+        <div class="col-8">
+          <div class="card-body">
+            <h5 class="card-title">${member.name}</h5>
+            <p class="card-text">${member.role}</p>
+            <a href="mailto:${member.email}" class="card-text">${member.email}</a>
+          </div>
+        </div>
       </div>
     </div>
   `;
