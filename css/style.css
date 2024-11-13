@@ -3,7 +3,16 @@ h1 {
     color: #E53270;
     margin-bottom: 30px;
 }
-
+.custom-btn {
+    background-color: #E53270;
+    color: white;
+    border-color: #E53270;
+  }
+  
+  .custom-btn:hover {
+    background-color: #D02963;
+  }
+  
 header p {
     margin-bottom: 60px;
 }
