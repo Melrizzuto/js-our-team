@@ -24,8 +24,9 @@ h5 {
     font-family: "Sour Gummy", sans-serif;
 }
 
-h5 {
-    text-transform: none;
+a {
+    text-decoration: none;
+    color: #E53270;
 }
 
 .card {

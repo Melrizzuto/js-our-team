@@ -94,13 +94,27 @@ function addMember(event) {
   const name = document.getElementById("name").value;
   const role = document.getElementById("role").value;
   const image = document.getElementById("image-url").value; 
+  const email = document.getElementById("email").value;
+  
 
   const newMember = {
     name,
     role,
     img: image,
+    email,
   };
 
   teamMembers.push(newMember);
   renderTeam();
+
+  // Reset del form
+  myform.reset();
+
+  // Nascondi il form
+  const formContainer = document.getElementById('add-member-container');
+  formContainer.classList.add('d-none');
+
+  // Cambia il testo del bottone
+  document.getElementById('toggle-form-btn').innerHTML = 'Aggiungi Membro';
 }
+

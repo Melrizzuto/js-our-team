@@ -41,20 +41,25 @@
                     <button id="toggle-form-btn" class="btn custom-btn mb-3 rounded-pill shadow">Aggiungi Membro</button>
               
                     <!-- Form inizialmente nascosto -->
-                    <div id="add-member-container" class="d-none">
+                    <div id="add-member-container" class="d-none regular shadow">
                       <form id="add-member-form" class="bg-dark text-white p-4 rounded shadow-sm">
                         <div class="form-group mb-3">
                           <label for="name" class="form-label">Nome</label>
-                          <input type="text" class="form-control bg-secondary text-white border-0" id="name" required>
+                          <input type="text" class="form-control bg-secondary text-white border-0" id="name" placeholder="Inserisci il tuo nome e cognome" required>
                         </div>
                         <div class="form-group mb-3">
                           <label for="role" class="form-label">Ruolo</label>
-                          <input type="text" class="form-control bg-secondary text-white border-0" id="role" required>
+                          <input type="text" class="form-control bg-secondary text-white border-0" id="role" placeholder="Inserisci il tuo Ruolo" required>
                         </div>
                         <div class="form-group mb-4">
-                          <label for="image-url" class="form-label">URL Immagine</label>
-                          <input type="url" class="form-control bg-secondary text-white border-0" id="image-url" required>
+                          <label for="image-url" class="form-label">Foto Profilo</label>
+                          <input type="url" class="form-control bg-secondary text-white border-0" id="image-url" placeholder="Inserisci la url immagine" required>
                         </div>
+                        <div class="form-group mb-4">
+                          <label for="email" class="form-label">Email</label>
+                          <input type="email" class="form-control bg-secondary text-white border-0" id="email" placeholder="La tua email" required>
+                        </div>
+                       
                         <!-- pulsanti form -->
                         <button type="submit" class="btn custom-btn mb-3 rounded-pill">Aggiungi</button>
                         <button type="reset" class="btn btn-light mb-3 rounded-pill">Annulla</button>
