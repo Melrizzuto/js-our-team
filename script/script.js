@@ -76,11 +76,8 @@ document.getElementById('toggle-form-btn').addEventListener('click', function() 
   const formContainer = document.getElementById('add-member-container');
   formContainer.classList.toggle('d-none');
 
-  if (formContainer.classList.contains('d-none')) {
-    this.innerHTML = 'Entra a far parte del team';
-  } else {
-    this.innerHTML = 'Nascondi';
-  }
+  // Modifica il testo del bottone in base alla visibilità del form
+  this.innerHTML = formContainer.classList.contains('d-none') ? 'Entra a far parte del team' : 'Nascondi';
 });
 
 // Aggiungi membro al team
@@ -91,12 +88,19 @@ function addMember(event) {
   event.preventDefault();
   event.stopPropagation();
   
+  // Raccogli i valori dal form
   const name = document.getElementById("name").value;
   const role = document.getElementById("role").value;
-  const image = document.getElementById("image-url").value; 
+  const image = document.getElementById("image-url").value;
   const email = document.getElementById("email").value;
-  
 
+  // Verifica che tutti i campi siano compilati
+  if (!name || !role || !image || !email) {
+    alert("Tutti i campi sono obbligatori!");
+    return; // Esci dalla funzione se ci sono campi vuoti
+  }
+
+  // Crea un nuovo membro
   const newMember = {
     name,
     role,
@@ -104,8 +108,9 @@ function addMember(event) {
     email,
   };
 
+  // Aggiungi il nuovo membro all'array
   teamMembers.push(newMember);
-  renderTeam();
+  renderTeam(); // Rendi di nuovo visibili tutte le card aggiornate
 
   // Reset del form
   myform.reset();
@@ -114,7 +119,6 @@ function addMember(event) {
   const formContainer = document.getElementById('add-member-container');
   formContainer.classList.add('d-none');
 
-  // Cambia il testo del bottone
+  // Modifica il testo del bottone
   document.getElementById('toggle-form-btn').innerHTML = 'Aggiungi Membro';
 }
-
