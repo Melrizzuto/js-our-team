@@ -94,11 +94,6 @@ function addMember(event) {
   const image = document.getElementById("image-url").value;
   const email = document.getElementById("email").value;
 
-  // Verifica che tutti i campi siano compilati
-  if (!name || !role || !image || !email) {
-    alert("Tutti i campi sono obbligatori!");
-    return; // Esci dalla funzione se ci sono campi vuoti
-  }
 
   // Crea un nuovo membro
   const newMember = {
@@ -120,5 +115,5 @@ function addMember(event) {
   formContainer.classList.add('d-none');
 
   // Modifica il testo del bottone
-  document.getElementById('toggle-form-btn').innerHTML = 'Aggiungi Membro';
+  document.getElementById('toggle-form-btn').innerHTML = 'Entra a far parte del team';
 }
