@@ -44,7 +44,7 @@ let teamHTML = ''; // Variabile per accumulare il contenuto HTML
 
 for (const member of teamMembers) {
   teamHTML += `
-    <div class="col-12 col-sm-12 col-md-6 col-lg-4 mb-4"> <!-- Responsività -->
+    <div class="col-12 col-sm-12 col-md-6 col-lg-4 mb-4">
       <div class="card text-bg-dark mb-3">
         <div class="row g-0">
           <div class="col-4">
